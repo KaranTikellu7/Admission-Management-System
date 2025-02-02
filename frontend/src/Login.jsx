@@ -1,10 +1,12 @@
 import { useState } from "react";
-import "./css/login.css"; // Import the CSS file
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import "./css/login.css"; // Import CSS
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,8 +19,7 @@ const Login = () => {
 
       if (user) {
         localStorage.setItem("loggedInUser", JSON.stringify(user));
-        alert("Login Successful!");
-        window.location.href = "/dashboard";
+        navigate("/dashboard"); // Redirect to Dashboard
       } else {
         setError("Invalid username or password");
       }
@@ -29,7 +30,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <div className="login-header">Login</div> {/* Centered Header */}
+      <div className="login-header">Login</div>
       <div className="login-box">
         <h2>Sign In</h2>
         <form onSubmit={handleLogin}>
