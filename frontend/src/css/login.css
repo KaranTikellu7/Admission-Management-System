@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: ghostwhite;
   }
   
   /* Styling the "Login" header */
@@ -19,7 +19,7 @@
   
   /* Styling the login box */
   .login-box {
-    background: white;
+    background: lightblue;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
