@@ -1,11 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+import Login from "./Login";
+import Dashboard from "./Dashboard";
 
 function App() {
-
   return (
-   
-   <div className="text-3xl text-teal-500">Welcome</div>
-  )
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
+  );
 }
 
-export default App
- 
+export default App;
